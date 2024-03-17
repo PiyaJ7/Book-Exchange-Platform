@@ -1,0 +1,58 @@
+.signup-input {
+  border: 1px solid black;
+  width: 70%;
+  height: 8vh;
+  margin: 3% 15%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 10px;
+  position: relative;
+  border: 2px solid rgb(27, 55, 131);
+}
+
+.signup-input input {
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+}
+
+.p2 {
+  text-align: center;
+  font-size: 2.3vw;
+}
+
+@media (max-width: 1000px) {
+  .p2 {
+    font-size: 2.5vw;
+  }
+}
+
+@media (max-width: 850px) {
+  .p2 {
+    font-size: 2.8vw;
+  }
+}
+
+@media (max-width: 780px) {
+  .p2 {
+    font-size: 3.5vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .p2 {
+    font-size: 4vw;
+  }
+}
+
+@media (max-width: 455px) {
+  .p2 {
+    font-size: 6vw;
+  }
+}

@@ -4,6 +4,7 @@ import LoginImage from "./images/login img2.png";
 import logo from "./images/logo.png";
 import { FaUser, FaLock } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router-dom";
 
 export default function Loginpg() {
   return (
@@ -44,7 +45,10 @@ export default function Loginpg() {
               Login
             </button>
             <p className="no-acc mt-1 mx-15% mb-3 text-1.2vw cursor-pointer">
-              Don't have an account? <strong>Sign up</strong>
+              Don't have an account?{" "}
+              <strong>
+                <Link to="/Signup">Sign up</Link>
+              </strong>
             </p>
           </form>
 
