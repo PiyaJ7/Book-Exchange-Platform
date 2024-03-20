@@ -2,11 +2,15 @@ import express, { request, response } from "express";
 import { PORT, mongodbURL } from "./config.js";
 import mongoose from "mongoose";
 import userRoute from "./routes/userRoute.js";
+import cors from "cors";
 
 const app = express();
 
 //Middleware for parsing request body
 app.use(express.json());
+
+//Middleware to handle cors policy
+app.use(cors());
 
 app.get("/", (request, response) => {
   console.log(request);
