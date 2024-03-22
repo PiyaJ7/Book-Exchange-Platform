@@ -1,0 +1,92 @@
+.header-section {
+  display: flex;
+  align-items: center;
+  box-shadow: 1px 1px 10px #d7d7d7ce;
+  position: fixed;
+}
+
+.header-left {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 3%;
+}
+
+.header-p1 {
+  font-size: 3.3vw;
+  background: -webkit-linear-gradient(
+    rgb(96 165 250),
+    rgb(29 78 216),
+    rgb(30 58 138),
+    rgb(23 37 84)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-left: 2%;
+}
+
+.header-right {
+  width: 50%;
+  padding-right: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.profile-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 7%;
+  height: auto;
+  border-radius: 50%;
+  border: 2px solid black;
+  padding: 1%;
+  cursor: pointer;
+}
+
+.profile-name {
+  margin-right: 2%;
+  line-height: 130%;
+}
+
+.Profile-name-p1 {
+  font-size: 1.3vw;
+}
+
+.Profile-name-p2 {
+  font-size: 1vw;
+}
+
+.header-notification,
+.header-mail,
+.header-cart {
+  margin-right: 5%;
+  position: relative;
+  cursor: pointer;
+}
+
+.notification-count,
+.mail-count {
+  position: absolute;
+  background-color: rgb(219, 56, 56);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+}
+
+.notification-count {
+  top: 0;
+  right: 0;
+}
+
+.mail-count {
+  top: -2px;
+  right: -5px;
+}
