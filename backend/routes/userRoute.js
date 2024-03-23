@@ -1,19 +1,10 @@
-<<<<<<< Updated upstream
-import express, { response } from "express";
-=======
 import express, { request, response } from "express";
->>>>>>> Stashed changes
 import { User } from "../models/createUserModel.js";
 
 const router = express.Router();
 
-<<<<<<< Updated upstream
-//Route for create user
-router.post("/", async (request, reponse) => {
-=======
 //Route for create user (Signup)
 router.post("/register", async (request, reponse) => {
->>>>>>> Stashed changes
   try {
     if (
       !request.body.email ||
@@ -39,8 +30,6 @@ router.post("/register", async (request, reponse) => {
   }
 });
 
-<<<<<<< Updated upstream
-=======
 //Router for login
 router.post("/login", async (request, response) => {
   try {
@@ -59,5 +48,4 @@ router.post("/login", async (request, response) => {
   }
 });
 
->>>>>>> Stashed changes
 export default router;
