@@ -1,12 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import "./loginpg.css";
 import LoginImage from "./images/login img2.png";
 import logo from "./images/logo.png";
 import { FaUser, FaLock } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function Loginpg() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const loginData = {
+      username,
+      password,
+    };
+    try {
+      const response = await axios.post(
+        "http://localhost:5555/user/login",
+        loginData
+      );
+      console.log(response);
+      if (response.status === 200) {
+        console.log("Login Successfull..");
+        navigate("/Dashboard");
+      } else {
+        console.log("Login Failed..");
+      }
+    } catch (error) {
+      console.log("Error:", error.message);
+    }
+  };
+
   return (
     <div className="login-page">
       <div className="login-containe">
@@ -18,13 +46,16 @@ export default function Loginpg() {
           <p className="p1 mx-15% my-0 text-2vw font-bold text-gray-500">
             Login to Continue..
           </p>
-          <form action="">
+          <form onSubmit={handleSubmit}>
             <div className="login-input font-sans">
               <FaUser className="input-icon" />
               <input
                 className="outline-none w-full bg-transparent"
                 type="text"
                 placeholder="Username"
+                onChange={(e) => {
+                  setUsername(e.target.value);
+                }}
                 required
               />
             </div>
@@ -34,6 +65,9 @@ export default function Loginpg() {
                 className="outline-none w-full bg-transparent"
                 type="password"
                 placeholder="Password"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
                 required
               />
             </div>
