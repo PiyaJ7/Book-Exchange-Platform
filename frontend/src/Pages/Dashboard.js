@@ -4,9 +4,11 @@ import Header from "../Components/Header";
 
 export default function Dashboard() {
   return (
-    <div className="dashboard-page">
+    <div className="dashboard-Section">
       <Header />
-      <div>This is the dashboard</div>
+      <div className="dashboard-page h-full">
+        <p>This is the dashboard</p>
+      </div>
     </div>
   );
 }

@@ -23,7 +23,10 @@ export default function Signup() {
     };
 
     try {
-      const response = await axios.post("http://localhost:5555/user", newUser);
+      const response = await axios.post(
+        "http://localhost:5555/user/register",
+        newUser
+      );
       console.log(response);
       if (response.status === 201) {
         console.log("Login successfull: ", response.data);
