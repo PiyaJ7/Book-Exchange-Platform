@@ -14,7 +14,7 @@ export default function Header() {
   }
 
   return (
-    <div className="header-section h-20 w-full bg-white">
+    <div className="header-section w-full bg-white">
       <div className="header-left h-full">
         <img src={logo} className="header-logo w-1/6" alt="logo.png" />
         <p className="header-p1 font-bold text-blue-900 font-mono">
@@ -35,7 +35,7 @@ export default function Header() {
         </div>
         <div className="profile-name">
           <p className="Profile-name-p1">Welcome,</p>
-          <p className="Profile-name-p2">Barry Herry Allen</p>
+          <p className="Profile-name-p2">Bartholomew Henry Allen</p>
         </div>
         <div onClick={toggleProfileBar} className="profile-logo">
           <FaUser size={35} />
