@@ -1,9 +1,9 @@
 .header-section {
   display: flex;
   align-items: center;
-  box-shadow: 1px 1px 10px #d7d7d7ce;
   position: fixed;
   z-index: 5;
+  height: 10vh;
 }
 
 .header-left {
