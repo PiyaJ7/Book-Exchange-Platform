@@ -1,4 +1,48 @@
 .dashboard-page {
   padding-top: 20vh;
-  background-color: antiquewhite;
+  position: relative;
+}
+
+.background-img {
+  width: 100vw;
+  height: 70vh;
+}
+
+.dashboard-heading {
+  position: relative;
+}
+
+.image-caption {
+  position: absolute;
+  text-align: center;
+  top: 20vh;
+  left: 10vw;
+  padding: 3%;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.353),
+    rgba(255, 255, 255, 0.581),
+    rgba(255, 255, 255, 0.714),
+    rgba(255, 255, 255, 0.879),
+    white,
+    rgba(255, 255, 255, 0.879),
+    rgba(255, 255, 255, 0.714),
+    rgba(255, 255, 255, 0.581),
+    rgba(255, 255, 255, 0.353),
+    rgba(255, 255, 255, 0)
+  );
+  font-weight: bold;
+  color: black;
+  width: 80vw;
+  height: 30vh;
+  z-index: 10;
+}
+
+.image-caption h1 {
+  font-size: 3.5vw;
+}
+
+.image-caption p {
+  font-size: 2vw;
 }
