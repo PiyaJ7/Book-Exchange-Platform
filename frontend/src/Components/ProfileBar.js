@@ -6,6 +6,7 @@ import { BiSolidMessageRoundedDots } from "react-icons/bi";
 import { FaBook } from "react-icons/fa";
 import { TbLogout } from "react-icons/tb";
 import { IoClose } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 export default function ProfileBar() {
   function hideProfileBar() {
@@ -25,10 +26,12 @@ export default function ProfileBar() {
         <RiPagesFill className="profilebar-icon" size={20} />
         <p>Dashboard</p>
       </div>
-      <div className="profilebar-link flex items-center">
-        <FaUser size={18} />
-        <p>Your Profile</p>
-      </div>
+      <Link to="/MyProfile">
+        <div className="profilebar-link flex items-center">
+          <FaUser size={18} />
+          <p>Your Profile</p>
+        </div>
+      </Link>
       <div className="profilebar-link flex items-center">
         <BiSolidMessageRoundedDots size={20} />
         <p>Message</p>

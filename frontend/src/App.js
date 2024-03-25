@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Loginpg from "./Pages/Loginpg";
 import Signup from "./Pages/Signup";
 import Dashboard from "./Pages/Dashboard";
+import Profilepg from "./Pages/Profilepg";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Route path="/" element={<Loginpg />}></Route>
           <Route path="/Signup" element={<Signup />}></Route>
           <Route path="/Dashboard" element={<Dashboard />}></Route>
+          <Route path="/MyProfile" element={<Profilepg />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
