@@ -22,10 +22,12 @@ export default function ProfileBar() {
       >
         <IoClose size={23} />
       </button>
-      <div className="profilebar-link flex items-center">
-        <RiPagesFill className="profilebar-icon" size={20} />
-        <p>Dashboard</p>
-      </div>
+      <Link to="/Dashboard">
+        <div className="profilebar-link flex items-center">
+          <RiPagesFill className="profilebar-icon" size={20} />
+          <p>Dashboard</p>
+        </div>
+      </Link>
       <Link to="/MyProfile">
         <div className="profilebar-link flex items-center">
           <FaUser size={18} />
