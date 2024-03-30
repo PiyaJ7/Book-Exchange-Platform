@@ -4,6 +4,7 @@ import Loginpg from "./Pages/Loginpg";
 import Signup from "./Pages/Signup";
 import Dashboard from "./Pages/Dashboard";
 import Profilepg from "./Pages/Profilepg";
+import MyLibrary from "./Pages/MyLibrary";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/Signup" element={<Signup />}></Route>
           <Route path="/Dashboard" element={<Dashboard />}></Route>
           <Route path="/MyProfile" element={<Profilepg />}></Route>
+          <Route path="/MyLibrary" element={<MyLibrary />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
