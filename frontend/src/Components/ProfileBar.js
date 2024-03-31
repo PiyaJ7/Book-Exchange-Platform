@@ -38,10 +38,12 @@ export default function ProfileBar() {
         <BiSolidMessageRoundedDots size={20} />
         <p>Message</p>
       </div>
-      <div className="profilebar-link flex items-center">
-        <FaBook size={18} />
-        <p>Your Library</p>
-      </div>
+      <Link to="/MyLibrary">
+        <div className="profilebar-link flex items-center">
+          <FaBook size={18} />
+          <p>My Library</p>
+        </div>
+      </Link>
       <div className="Signout-link items-center">
         <TbLogout size={20} />
         <p>Sign out</p>
