@@ -13,7 +13,7 @@ export default function NavigationBar() {
           <option value="3">Romance Novel</option>
           <option value="4">Fiction</option>
           <option value="5">Fairy tale</option>
-          <option value="6">Trriller</option>
+          <option value="6">Thriller</option>
           <option value="7">Classic</option>
         </select>
       </div>
