@@ -4,8 +4,15 @@ import Header from "../Components/Header";
 import { BiSolidEdit } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
 import book1 from "../Pages/images/Harry-Potter-and-the-Philosophers-Stone.jpeg";
+import { useNavigate } from "react-router";
 
 export default function MyLibrary() {
+  const navigate = useNavigate();
+
+  const uploadBook = () => {
+    navigate("/Upload-book");
+  };
+
   return (
     <div className="myLibrary-section">
       <Header />
@@ -15,7 +22,7 @@ export default function MyLibrary() {
             My Library
           </div>
           <div className="header-buttons flex items-center justify-center">
-            <button>Upload a Book</button>
+            <button onClick={uploadBook}>Upload a Book</button>
           </div>
         </div>
         <div className="library-body">

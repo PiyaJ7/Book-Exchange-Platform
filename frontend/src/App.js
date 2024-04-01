@@ -5,6 +5,7 @@ import Signup from "./Pages/Signup";
 import Dashboard from "./Pages/Dashboard";
 import Profilepg from "./Pages/Profilepg";
 import MyLibrary from "./Pages/MyLibrary";
+import UploadBook from "./Pages/UploadBook";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/Dashboard" element={<Dashboard />}></Route>
           <Route path="/MyProfile" element={<Profilepg />}></Route>
           <Route path="/MyLibrary" element={<MyLibrary />}></Route>
+          <Route path="/Upload-book" element={<UploadBook />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
