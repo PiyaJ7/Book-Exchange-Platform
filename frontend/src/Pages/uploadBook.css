@@ -10,8 +10,19 @@
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 40px;
-  padding: 3% 5%;
+  padding: 2% 5%;
   width: 50vw;
+  position: relative;
+}
+
+.upload-book-close-button {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+}
+
+.upload-book-close-icon {
+  color: gainsboro;
 }
 
 .bookUpload-div h1 {
@@ -34,4 +45,99 @@
   color: white;
   font-weight: bold;
   font-size: 1.5vw;
+}
+
+.upload-book-input {
+  border: 1px solid rgb(27, 55, 131);
+  padding: 1%;
+  margin: 2% 0%;
+  border-radius: 10px;
+}
+
+.upload-book-input input {
+  outline: none;
+  width: 100%;
+  height: fit-content;
+  color: rgb(27, 55, 131);
+  padding: 0% 1%;
+}
+
+.upload-book-input select {
+  outline: none;
+  width: 100%;
+  color: rgb(27, 55, 131);
+  padding: 0% 1%;
+}
+
+.upload-bookimg {
+  border: 1px dashed rgb(27, 55, 131);
+  padding: 7%;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cloud-icon {
+  color: gainsboro;
+}
+
+.upload-bookimg p {
+  color: rgb(208, 204, 204);
+  margin: 2%;
+}
+
+.upload-bookimg button {
+  background-color: gainsboro;
+  padding: 0% 2%;
+  border: 1px solid rgb(158, 158, 158);
+  border-radius: 5px;
+}
+
+@media (max-width: 900px) {
+  .bookUpload-div {
+    width: 70vw;
+  }
+
+  .bookUpload-div h1 {
+    font-size: 4.5vw;
+  }
+
+  .book-upload-button {
+    margin: 0% 20%;
+    font-size: 2.5vw;
+  }
+}
+
+@media (max-width: 650px) {
+  .bookUpload-div {
+    width: 80vw;
+  }
+
+  .bookUpload-div h1 {
+    font-size: 5.5vw;
+  }
+
+  .book-upload-button {
+    font-size: 3.3vw;
+  }
+}
+
+@media (max-width: 525px) {
+  .bookUpload-div {
+    width: 90vw;
+    border-radius: 0px;
+    padding: 5%;
+  }
+
+  .bookUpload-div h1 {
+    font-size: 5.5vw;
+  }
+
+  .book-upload-button {
+    margin: 0% 20%;
+    font-size: 3.5vw;
+  }
 }
