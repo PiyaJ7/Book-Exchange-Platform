@@ -13,7 +13,7 @@ export default function UploadBook() {
   const [category, setCategory] = useState("");
   const [file, setFile] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const formData = new FormData();
@@ -23,16 +23,19 @@ export default function UploadBook() {
     formData.append("category", category);
     formData.append("file", file);
 
-    axios
-      .post("http://localhost:5555/book/upload", formData)
-      .then((response) => {
-        if (response === "Success") {
-          navigate("/MyLibrary");
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    try {
+      const response = await axios.post(
+        "http://localhost:5555/book/upload",
+        formData
+      );
+      console.log("uploading....");
+      if (response.data === "Success") {
+        console.log("uploading success!!");
+        navigate("/MyLibrary");
+      }
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const handleNavigate = () => {
@@ -52,6 +55,7 @@ export default function UploadBook() {
               type="text"
               placeholder="Title"
               onChange={(e) => setTitle(e.target.value)}
+              required
             />
           </div>
           <div className="upload-book-input">
@@ -59,6 +63,7 @@ export default function UploadBook() {
               type="text"
               placeholder="Author"
               onChange={(e) => setAuthor(e.target.value)}
+              required
             />
           </div>
           <div className="upload-book-input">
@@ -66,10 +71,16 @@ export default function UploadBook() {
               type="text"
               placeholder="Price (LKR)"
               onChange={(e) => setPrice(e.target.value)}
+              required
             />
           </div>
           <div className="upload-book-input">
-            <select name="" id="" onChange={(e) => setCategory(e.target.value)}>
+            <select
+              name=""
+              id=""
+              onChange={(e) => setCategory(e.target.value)}
+              required
+            >
               <option value="Null">Choose category</option>
               <option value={"Mystery"}>Mystery</option>
               <option value={"Horror"}>Horror</option>
@@ -93,6 +104,7 @@ export default function UploadBook() {
               className="input-file-bookimg"
               accept="image/*"
               onChange={(e) => setFile(e.target.files[0])}
+              required
             />
           </div>
           <div className="upload-button-div flex items-center justify-center">

@@ -47,6 +47,16 @@
   font-size: 1.5vw;
 }
 
+.book-upload-button:hover {
+  background-color: rgb(49, 76, 149);
+  box-shadow: 2px 2px rgb(172, 172, 172);
+}
+
+.book-upload-button:active {
+  background-color: rgb(30, 51, 111);
+  box-shadow: 2px 2px rgb(123, 123, 123);
+}
+
 .upload-book-input {
   border: 1px solid rgb(27, 55, 131);
   padding: 1%;
