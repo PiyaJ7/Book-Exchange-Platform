@@ -2,9 +2,38 @@ import "./uploadBook.css";
 import { MdCloudUpload } from "react-icons/md";
 import { IoCloseSharp } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
 
 export default function UploadBook() {
   const navigate = useNavigate();
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+  const [price, setPrice] = useState("");
+  const [category, setCategory] = useState("");
+  const [file, setFile] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("author", author);
+    formData.append("price", price);
+    formData.append("category", category);
+    formData.append("file", file);
+
+    axios
+      .post("http://localhost:5555/book/upload", formData)
+      .then((response) => {
+        if (response === "Success") {
+          navigate("/MyLibrary");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   const handleNavigate = () => {
     navigate(-1);
@@ -17,18 +46,30 @@ export default function UploadBook() {
           <IoCloseSharp size={40} className="upload-book-close-icon" />
         </button>
         <h1 className="font-bold text-center text-blue-900">Upload a Book</h1>
-        <form action="">
+        <form onSubmit={handleSubmit}>
           <div className="upload-book-input">
-            <input type="text" placeholder="Title" />
+            <input
+              type="text"
+              placeholder="Title"
+              onChange={(e) => setTitle(e.target.value)}
+            />
           </div>
           <div className="upload-book-input">
-            <input type="text" placeholder="Author" />
+            <input
+              type="text"
+              placeholder="Author"
+              onChange={(e) => setAuthor(e.target.value)}
+            />
           </div>
           <div className="upload-book-input">
-            <input type="text" placeholder="Price (LKR)" />
+            <input
+              type="text"
+              placeholder="Price (LKR)"
+              onChange={(e) => setPrice(e.target.value)}
+            />
           </div>
           <div className="upload-book-input">
-            <select name="" id="">
+            <select name="" id="" onChange={(e) => setCategory(e.target.value)}>
               <option value="Null">Choose category</option>
               <option value={"Mystery"}>Mystery</option>
               <option value={"Horror"}>Horror</option>
@@ -45,15 +86,14 @@ export default function UploadBook() {
               document.querySelector(".input-file-bookimg").click()
             }
           >
+            <MdCloudUpload size={50} className="cloud-icon" />
+            <p>Drag and Drop files here</p>
             <input
               type="file"
               className="input-file-bookimg"
               accept="image/*"
-              hidden
+              onChange={(e) => setFile(e.target.files[0])}
             />
-            <MdCloudUpload size={50} className="cloud-icon" />
-            <p>Drag and Drop files here</p>
-            <button>Choose file</button>
           </div>
           <div className="upload-button-div flex items-center justify-center">
             <button className="book-upload-button">Upload Book</button>

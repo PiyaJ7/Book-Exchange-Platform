@@ -89,11 +89,8 @@
   margin: 2%;
 }
 
-.upload-bookimg button {
-  background-color: gainsboro;
-  padding: 0% 2%;
-  border: 1px solid rgb(158, 158, 158);
-  border-radius: 5px;
+.upload-bookimg input {
+  margin-left: 15%;
 }
 
 @media (max-width: 900px) {
