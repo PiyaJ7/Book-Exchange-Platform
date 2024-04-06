@@ -1,7 +1,8 @@
-import express from "express";
+import express, { response } from "express";
 import { Book } from "../models/bookModel.js";
 import multer from "multer";
 import path from "path";
+import { request } from "http";
 
 const router = express.Router();
 router.use("/Public/Images", express.static("Public/Images"));
@@ -39,6 +40,13 @@ router.post("/upload", upload.single("file"), async (request, response) => {
     console.error("Error uploading book:", err);
     return response.status(500).json({ error: "Error uploading book" });
   }
+});
+
+//Route for get books
+router.get("/getBook", (request, response) => {
+  Book.find()
+    .then((books) => response.json(books))
+    .catch((err) => response.json(err));
 });
 
 export default router;
