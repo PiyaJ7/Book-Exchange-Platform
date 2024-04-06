@@ -1,4 +1,4 @@
-import { mongoose } from "mongoose";
+import mongoose from "mongoose";
 
 const bookSchema = mongoose.Schema(
   {
@@ -21,6 +21,7 @@ const bookSchema = mongoose.Schema(
 
     file: {
       type: String,
+      required: true,
     },
   },
   {
