@@ -5,7 +5,7 @@ import path from "path";
 import { request } from "http";
 
 const router = express.Router();
-router.use("/Public/Images", express.static("Public/Images"));
+router.use(express.static("Public"));
 
 const storage = multer.diskStorage({
   destination: (request, file, cb) => {
