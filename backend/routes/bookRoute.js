@@ -2,13 +2,11 @@ import express, { response } from "express";
 import { Book } from "../models/bookModel.js";
 import multer from "multer";
 import path from "path";
-import cookieParser from "cookie-parser";
-import jwt from "jsonwebtoken";
 import { request } from "http";
 
 const router = express.Router();
 router.use(express.static("Public"));
-router.use(cookieParser());
+// router.use(cookieParser());
 
 const storage = multer.diskStorage({
   destination: (request, file, cb) => {
@@ -50,31 +48,6 @@ router.get("/getBook", (request, response) => {
   Book.find()
     .then((books) => response.json(books))
     .catch((err) => response.json(err));
-});
-
-//Route for verify user
-const verifyUser = (request, response, next) => {
-  const token = request.cookies.token;
-  if (!token) {
-    console.log("Token is missing.");
-  } else {
-    jwt.verify(token, "jwt-secret-key", (err, decoded) => {
-      if (err) {
-        return response.json("The token is wrong");
-      } else {
-        request.email = decoded.email;
-        request.username = decoded.username;
-        next();
-      }
-    });
-  }
-};
-
-router.get("/verify", verifyUser, (request, response) => {
-  return response.json({
-    email: request.email,
-    username: request.username,
-  });
 });
 
 export default router;
