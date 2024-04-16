@@ -11,7 +11,13 @@ const app = express();
 app.use(express.json());
 
 //Middleware to handle cors policy
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:3000"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 
 app.get("/", (request, response) => {
   console.log(request);
