@@ -13,7 +13,7 @@ export default function Signup() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     const newUser = {
@@ -22,19 +22,10 @@ export default function Signup() {
       password,
     };
 
-    try {
-      const response = await axios.post(
-        "http://localhost:5555/user/register",
-        newUser
-      );
-      console.log(response);
-      if (response.status === 201) {
-        console.log("Login successfull: ", response.data);
-        navigate("/");
-      }
-    } catch (error) {
-      console.log("Error:", error.message);
-    }
+    axios
+      .post("http://localhost:5555/user/register", newUser)
+      .then((response) => navigate("/"))
+      .catch((err) => console.log(err));
   };
 
   return (
