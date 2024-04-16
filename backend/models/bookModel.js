@@ -23,6 +23,9 @@ const bookSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    email: {
+      type: String,
+    },
   },
   {
     timestamp: true,

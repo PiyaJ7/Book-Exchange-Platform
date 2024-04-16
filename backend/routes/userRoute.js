@@ -21,7 +21,7 @@ router.post("/register", (request, response) => {
 });
 
 //Route for verify user
-const verifyUser = (request, response, next) => {
+export const verifyUser = (request, response, next) => {
   const token = request.cookies.token;
   if (!token) {
     console.log("Token is missing.");
