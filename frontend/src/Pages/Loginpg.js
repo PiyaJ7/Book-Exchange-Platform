@@ -12,27 +12,25 @@ export default function Loginpg() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const loginData = {
       username,
       password,
     };
-    try {
-      const response = await axios.post(
-        "http://localhost:5555/user/login",
-        loginData
-      );
-      console.log(response);
-      if (response.status === 200) {
-        console.log("Login Successfull..");
-        navigate("/Dashboard");
-      } else {
-        console.log("Login Failed..");
-      }
-    } catch (error) {
-      console.log("Error:", error.message);
-    }
+
+    axios
+      .post("http://localhost:5555/user/login", loginData)
+      .then((response) => {
+        if (response.data === "Login Successfull..") {
+          navigate("/Dashboard");
+        } else {
+          console.log("Login Unsuccessfull...");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
