@@ -2,8 +2,9 @@ import "./uploadBook.css";
 import { MdCloudUpload } from "react-icons/md";
 import { IoCloseSharp } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
+import { userContext } from "../App";
 
 export default function UploadBook() {
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ export default function UploadBook() {
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("");
   const [file, setFile] = useState("");
+  const user = useContext(userContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,6 +23,7 @@ export default function UploadBook() {
     formData.append("author", author);
     formData.append("price", price);
     formData.append("category", category);
+    formData.append("email", user.email);
     formData.append("file", file);
 
     try {
@@ -28,9 +31,7 @@ export default function UploadBook() {
         "http://localhost:5555/book/upload",
         formData
       );
-      console.log("uploading....");
       if (response.data === "Success") {
-        console.log("uploading success!!");
         navigate("/MyLibrary");
       }
     } catch (err) {
