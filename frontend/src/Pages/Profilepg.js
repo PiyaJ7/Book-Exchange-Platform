@@ -4,6 +4,7 @@ import banner from "./images/Profile banner.png";
 import reading from "./images/reading banner.png";
 import { FaUserLarge } from "react-icons/fa6";
 import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 
 export default function Profilepg() {
   return (
@@ -25,7 +26,11 @@ export default function Profilepg() {
             </div>
           </div>
           <div className="profilepg-bottom">
-            <img className="reading-banner" src={reading} alt="reading banner.png" />
+            <img
+              className="reading-banner"
+              src={reading}
+              alt="reading banner.png"
+            />
           </div>
         </div>
         <div className="profilepg-right bg-gray-50">
@@ -55,6 +60,7 @@ export default function Profilepg() {
           </form>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -6,6 +6,7 @@ import { MdDelete } from "react-icons/md";
 import { useNavigate } from "react-router";
 import axios from "axios";
 import { userContext } from "../App";
+import Footer from "../Components/Footer";
 
 export default function MyLibrary() {
   const navigate = useNavigate();
@@ -73,6 +74,7 @@ export default function MyLibrary() {
           )}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
