@@ -1,0 +1,89 @@
+.footer {
+  background-color: rgb(23 37 84);
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.footer-div {
+  width: 90%;
+  height: 30vh;
+}
+
+.footer-top {
+  height: 25vh;
+  border-bottom: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-top-left {
+  width: 50%;
+  text-align: center;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  margin: 0 3%;
+}
+
+.footer-top-left h1 {
+  font-size: 4vw;
+  font-weight: bold;
+  padding: 1% 0;
+}
+
+.footer-top-middle {
+  width: 30%;
+  height: 25vh;
+}
+
+.footer-top-middle h1 {
+  font-size: 1.5vw;
+  padding: 4% 5%;
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.list-p {
+  width: 50%;
+  padding: 0 5%;
+  font-size: 1.1vw;
+}
+
+.list-div {
+  display: flex;
+  align-items: center;
+}
+
+.footer-top-right {
+  width: 20%;
+  height: 25vh;
+}
+
+.footer-top-right h1 {
+  font-size: 1.5vw;
+  padding: 4% 10%;
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.footer-top-right p {
+  padding: 2% 10%;
+  font-size: 1.1vw;
+}
+
+.footer-bottom {
+  text-align: center;
+}
