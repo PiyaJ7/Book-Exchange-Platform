@@ -1,5 +1,6 @@
 .myLibrary-page {
   padding-top: 12vh;
+  height: 100vh;
 }
 
 .library-header {
@@ -109,4 +110,60 @@
 
 .library-delete-button:active {
   background-color: rgb(139, 10, 10);
+}
+
+@media (max-width: 1000px) {
+  .library-body {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .book-details-div h2 {
+    font-size: 1.8vw;
+  }
+
+  .book-details-div h3 {
+    font-size: 1.8vw;
+  }
+}
+
+@media (max-width: 850px) {
+  .library-body {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .book-details-div h2 {
+    font-size: 2.2vw;
+  }
+
+  .book-details-div h3 {
+    font-size: 2.1vw;
+  }
+}
+
+@media (max-width: 650px) {
+  .library-body {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .book-details-div h2 {
+    font-size: 3vw;
+  }
+
+  .book-details-div h3 {
+    font-size: 3vw;
+  }
+}
+
+@media (max-width: 450px) {
+  .library-body {
+    grid-template-columns: 1fr;
+  }
+
+  .book-details-div h2 {
+    font-size: 4vw;
+  }
+
+  .book-details-div h3 {
+    font-size: 4vw;
+  }
 }

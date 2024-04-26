@@ -35,7 +35,7 @@
   font-weight: bold;
   color: black;
   width: 80vw;
-  height: 30vh;
+  padding: 3%;
   z-index: 10;
 }
 
@@ -65,4 +65,44 @@
   border: 3px solid rgb(23 37 84);
   padding: 0 1%;
   border-radius: 10px;
+}
+
+@media (max-width: 1000px) {
+  .image-caption h1 {
+    font-size: 4.5vw;
+  }
+
+  .image-caption p {
+    font-size: 2.8vw;
+  }
+
+  .book-sell-heading {
+    font-size: 4vw;
+  }
+}
+
+@media (max-width: 850px) {
+  .image-caption h1 {
+    font-size: 5.5vw;
+  }
+
+  .image-caption p {
+    font-size: 3.3vw;
+  }
+
+  .book-sell-heading {
+    font-size: 5vw;
+  }
+}
+
+@media (max-width: 650px) {
+  .book-sell-heading {
+    font-size: 6vw;
+  }
+}
+
+@media (max-width: 450px) {
+  .book-sell-heading {
+    font-size: 8vw;
+  }
 }

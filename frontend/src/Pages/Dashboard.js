@@ -32,7 +32,7 @@ export default function Dashboard() {
       <NavigationBar />
       <div className="dashboard-page h-full">
         <div className="dashboard-heading">
-          <div className="image-caption font-mono">
+          <div className="image-caption font-mono grid items-center justify-center">
             <h1>Buy, Sell & Exchange Books for free!!</h1>
             <p>You can exchange used books with others..</p>
           </div>
