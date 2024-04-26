@@ -1,7 +1,9 @@
 import React from "react";
 import "./profilepg.css";
-import Header from "../Components/Header";
+import banner from "./images/Profile banner.png";
+import reading from "./images/reading banner.png";
 import { FaUserLarge } from "react-icons/fa6";
+import Header from "../Components/Header";
 
 export default function Profilepg() {
   return (
@@ -9,51 +11,48 @@ export default function Profilepg() {
       <Header />
       <div className="profile-page">
         <div className="profilepg-left">
-          <div className="profile-photo-div flex items-center justify-center">
-            <div className="profile-photo flex items-center justify-center">
-              <FaUserLarge size={200} />
+          <div className="profilepg-top bg-gray-50">
+            <div className="banner-div">
+              <img className="banner-img" src={banner} alt="banner.png" />
+              <div className="profile-photo">
+                <FaUserLarge size={70} />
+              </div>
+            </div>
+            <div className="name-div">
+              <h1>Bartholomew Henry Allen</h1>
+              <h2>@BarryAllen</h2>
+              <button className="edit-profile-button">Update Photo</button>
             </div>
           </div>
-          <div className="profile-name-div">
-            <p className="profile-name-p1">Bartholomew Henry Allen</p>
-            <p className="profile-username-p1">@BarryAllen</p>
-            <button className="edit-photo-button">Edit Profile photo</button>
+          <div className="profilepg-bottom">
+            <img className="reading-banner" src={reading} alt="reading banner.png" />
           </div>
         </div>
-        <div className="profilepg-right">
-          <div className="profile-deails-div flex items-center justify-center">
-            <form action="">
-              <div className="profile-input">
-                <label htmlFor="">Name</label>
-                <br />
-                <input type="text" /> <br />
-              </div>
-              <div className="profile-input">
-                <label htmlFor="">Email</label> <br />
-                <input type="text" /> <br />
-              </div>
-              <div className="profile-input">
-                <label htmlFor="">Username</label>
-                <br />
-                <input type="text" /> <br />
-              </div>
-              <button className="update-profile-button">Update Profile</button>
-            </form>
-          </div>
-          <p className="resetpw-heading">Reset Password</p>
-          <div className="profile-resetpw-div flex items-center justify-center">
-            <form action="">
-              <div className="reset-password-inut">
-                <label htmlFor="">New Password</label> <br />
-                <input type="password" /> <br />
-              </div>
-              <div className="reset-password-inut">
-                <label htmlFor="">Confirm New Password</label> <br />
-                <input type="password" /> <br />
-              </div>
-              <button className="reset-profile-button">Reset Password</button>
-            </form>
-          </div>
+        <div className="profilepg-right bg-gray-50">
+          <h1>Personal Information</h1>
+          <form action="">
+            <div className="profile-input">
+              <label htmlFor="">Name</label> <br />
+              <input type="text" />
+            </div>
+            <div className="profile-input">
+              <label htmlFor="">Email</label> <br />
+              <input type="text" />
+            </div>
+            <div className="profile-input">
+              <label htmlFor="">Username</label> <br />
+              <input type="text" />
+            </div>
+            <div className="profile-input">
+              <label htmlFor="">Phone No</label> <br />
+              <input type="text" />
+            </div>
+            <div className="profile-input">
+              <label htmlFor="">Address</label> <br />
+              <input type="text" />
+            </div>
+            <button>Edit Profile</button>
+          </form>
         </div>
       </div>
     </div>

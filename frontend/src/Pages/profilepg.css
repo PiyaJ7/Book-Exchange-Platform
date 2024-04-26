@@ -1,137 +1,162 @@
-.profile-page {
+.profilepg-section {
   height: 100vh;
-  display: grid;
-  grid-template-columns: 40% 60%;
-  padding-top: 10vh;
 }
 
-.profile-photo-div {
+.profile-page {
+  padding: 10% 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   width: 100%;
-  padding: 8% 0;
+}
+
+.profilepg-left {
+  width: 90%;
+}
+
+.profilepg-top {
+  padding-bottom: 5%;
+  border-radius: 25px;
+}
+
+.banner-div {
+  position: relative;
+}
+
+.banner-img {
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  width: 100%;
 }
 
 .profile-photo {
-  width: 40vh;
-  height: 40vh;
-  border: 2px solid black;
+  width: 15vh;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 1px solid black;
   border-radius: 100%;
+  position: absolute;
+  bottom: -25%;
+  left: 5%;
 }
 
-.profile-name-div {
-  padding: 0 12%;
+.name-div {
+  margin: 10% 0 0 5%;
 }
 
-.profile-name-p1 {
-  font-size: 3vw;
+.name-div h1 {
+  font-size: 1.5vw;
   font-weight: bold;
 }
 
-.profile-username-p1 {
-  font-size: 1.5vw;
+.name-div h2 {
+  font-size: 1.15vw;
+  color: gray;
   font-style: italic;
-  color: rgb(190, 190, 190);
 }
 
-.edit-photo-button {
+.reading-banner {
+  margin: 3% 0;
+  border-radius: 25px;
+}
+
+.edit-profile-button {
   background-color: rgb(27, 55, 131);
-  padding: 1% 2%;
-  border-radius: 10px;
   color: white;
-  margin: 5% 0 0 30%;
-  text-wrap: nowrap;
-}
-
-.edit-photo-button:hover {
-  background-color: rgb(38, 67, 147);
-}
-
-.edit-photo-button:active {
-  background-color: rgb(27, 53, 125);
-}
-
-.profile-input,
-.reset-password-inut {
-  width: 40vw;
-  margin: 3%;
-}
-
-.profile-input input,
-.reset-password-inut input {
-  width: 100%;
-  height: 6vh;
-  border: 2px solid black;
   border-radius: 10px;
+  padding: 0.5% 4%;
+  margin-top: 2%;
+  font-size: 1.1vw;
+}
+
+/* .profilepg-bottom {
+  height: 50%;
+} */
+
+.profilepg-right {
+  width: 90%;
+  padding: 5% 15%;
+  border-radius: 25px;
+}
+
+.profilepg-right h1 {
+  font-size: 2vw;
+  font-weight: bold;
+  margin-bottom: 4%;
+  text-align: center;
+}
+
+.profile-input {
+  margin: 5% 0;
+}
+
+.profile-input label {
+  font-size: 1.1vw;
+}
+
+.profile-input input {
+  width: 100%;
+  border: 1px solid gray;
+  height: 30px;
+  border-radius: 10px;
+  outline: none;
   padding: 0 2%;
 }
 
-.profile-input label,
-.reset-password-inut label {
-  font-size: 1.2vw;
-}
-
-.update-profile-button,
-.reset-profile-button {
+.profilepg-right button {
   background-color: rgb(27, 55, 131);
-  padding: 1% 2%;
-  border-radius: 10px;
   color: white;
-  margin-left: 45%;
-  text-wrap: nowrap;
+  border-radius: 10px;
+  padding: 0.8% 6%;
+  margin-top: 1%;
+  font-size: 1.1vw;
 }
 
-.update-profile-button:hover,
-.reset-profile-button:hover {
-  background-color: rgb(38, 67, 147);
-}
-
-.update-profile-button:active,
-.reset-profile-button:active {
-  background-color: rgb(27, 53, 125);
-}
-
-.resetpw-heading {
-  text-align: center;
-  font-size: 2vw;
-  font-weight: bold;
-  margin-top: 3%;
-}
-
-@media (max-width: 750px) {
+@media (max-width: 850px) {
   .profile-page {
-    display: grid;
     grid-template-columns: 1fr;
+    padding: 10%;
   }
 
-  .profile-name-div {
-    display: grid;
-    align-items: center;
-    justify-content: center;
+  .profilepg-left {
+    width: 100%;
   }
 
-  .profile-name-p1 {
-    font-size: 5vw;
+  .profilepg-right {
+    width: 100%;
   }
 
-  .profile-username-p1 {
+  .profilepg-bottom {
+    display: none;
+  }
+
+  .profilepg-right {
+    margin-top: 3%;
+  }
+
+  .name-div h1 {
+    font-size: 4vw;
+  }
+
+  .name-div h2 {
+    font-size: 3vw;
+  }
+
+  .edit-profile-button {
+    font-size: 2vw;
+  }
+
+  .profilepg-right h1 {
     font-size: 3.5vw;
   }
 
-  .edit-photo-button {
-    margin: 3% 0% 10% 0;
+  .profile-input label {
+    font-size: 2.1vw;
   }
 
-  .profile-input,
-  .reset-password-inut {
-    width: 70vw;
-  }
-
-  .profile-input label,
-  .reset-password-inut label {
-    font-size: 2.8vw;
-  }
-
-  .resetpw-heading {
-    font-size: 4vw;
-    margin-top: 5%;
+  .profilepg-right button {
+    font-size: 2vw;
   }
 }
